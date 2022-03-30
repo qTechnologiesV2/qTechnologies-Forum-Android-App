@@ -1,0 +1,14 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: build
+    image: javiersantos/android-ci:latest
+    volumes:
+      - name: cache
+        path: /root/.gradle/
+    commands:
+      - export GRADLE_USER_HOME=`pwd`/.gradle
+      - chmod +x ./gradlew
+      - ./gradlew assembleDebug

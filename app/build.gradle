@@ -51,14 +51,6 @@ def twaManifest = [
 ]
 
 android {
-    signingConfigs {
-        release {
-            storeFile file('C:\\android1.jks')
-            storePassword 'o0BkGUsWP1'
-            keyAlias 'mdma'
-            keyPassword 'o0BkGUsWP1'
-        }
-    }
     compileSdkVersion 31
     defaultConfig {
         applicationId "dev.mdma.forum.app"
@@ -142,7 +134,7 @@ android {
 
         resValue "bool", "enableSiteSettingsShortcut", twaManifest.enableSiteSettingsShortcut
         resValue "string", "orientation", twaManifest.orientation
-        signingConfig signingConfigs.release
+        
     }
     buildTypes {
         release {
